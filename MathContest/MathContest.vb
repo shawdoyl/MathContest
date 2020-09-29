@@ -5,7 +5,6 @@
 'https://github.com/shawdoyl/MathContest
 
 Public Class MathContest
-
     Dim numberOfProblems As Integer = 0
     Dim numberOfProblemsCorrect As Integer = 0
     Dim studentAge As Integer
@@ -21,8 +20,8 @@ Public Class MathContest
     End Sub
 
     Private Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
-
         Dim userMessage As String
+
         If AddRadioButton.Checked = True Then
             actualAnswer = CInt(firstNumber) + CInt(secondNumber)
         ElseIf SubtractRadioButton.Checked = True Then
@@ -40,13 +39,17 @@ Public Class MathContest
             userMessage = "Sorry, " & studentName & ", that is not correct. The correct " _
                         & "answer was " & actualAnswer & "."
         End If
+
         MsgBox(userMessage)
-        FirstNumberTextBox.Text = ""
-        SecondNumberTextBox.Text = ""
+        Randomize()
+        firstNumber = CInt((12 * Rnd()) + 1)
+        Randomize()
+        secondNumber = CInt((12 * Rnd()) + 1)
+        FirstNumberTextBox.Text = firstNumber
+        SecondNumberTextBox.Text = secondNumber
         AnswerTextBox.Text = ""
         SummaryButton.Enabled = True
         numberOfProblems += 1
-
     End Sub
 
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
@@ -144,44 +147,19 @@ Public Class MathContest
             AgeTextBox.Enabled = False
             GradeTextBox.Enabled = False
             ValidateButton.Enabled = False
+            Randomize()
+            firstNumber = CInt((12 * Rnd()) + 1)
+            Randomize()
+            secondNumber = CInt((12 * Rnd()) + 1)
+            FirstNumberTextBox.Text = firstNumber
+            SecondNumberTextBox.Text = secondNumber
         End If
     End Sub
 
     Private Sub AnyNumberTextBox_TextChanged(sender As Object, e As EventArgs) Handles FirstNumberTextBox.TextChanged, SecondNumberTextBox.TextChanged, AnswerTextBox.TextChanged
         Dim userMessage As String = ""
-        Dim firstNumberGood As Boolean
-        Dim secondNumberGood As Boolean
         Dim AnswerGood As Boolean
-        firstNumberGood = False
-        secondNumberGood = False
         AnswerGood = False
-
-        If FirstNumberTextBox.Text <> "" Then
-            Try
-                firstNumber = CInt(FirstNumberTextBox.Text)
-                If firstNumber < 13 Then
-                    firstNumberGood = True
-                Else
-                    userMessage &= "Please enter a number less than 13 in first number box" & vbNewLine
-                End If
-            Catch ex As Exception
-                MsgBox("Please enter a valid number in first number box")
-                FirstNumberTextBox.Text = ""
-            End Try
-        End If
-        If SecondNumberTextBox.Text <> "" Then
-            Try
-                secondNumber = CInt(SecondNumberTextBox.Text)
-                If firstNumber < 13 Then
-                    secondNumberGood = True
-                Else
-                    userMessage &= "Please enter a number less than 13 in second number box" & vbNewLine
-                End If
-            Catch ex As Exception
-                MsgBox("Please enter a valid number in second number box")
-                SecondNumberTextBox.Text = ""
-            End Try
-        End If
 
         If AnswerTextBox.Text <> "" Then
             Try
@@ -195,7 +173,7 @@ Public Class MathContest
             MsgBox(userMessage)
         Else
         End If
-        If firstNumberGood = True And secondNumberGood = True And AnswerGood = True Then
+        If AnswerGood = True Then
             SubmitButton.Enabled = True
         Else
             SubmitButton.Enabled = False

@@ -61,7 +61,7 @@ Partial Class MathContest
         Me.ButtonGroupBox.Controls.Add(Me.SubmitButton)
         Me.ButtonGroupBox.Location = New System.Drawing.Point(425, 13)
         Me.ButtonGroupBox.Name = "ButtonGroupBox"
-        Me.ButtonGroupBox.Size = New System.Drawing.Size(182, 293)
+        Me.ButtonGroupBox.Size = New System.Drawing.Size(182, 276)
         Me.ButtonGroupBox.TabIndex = 7
         Me.ButtonGroupBox.TabStop = False
         '
@@ -112,7 +112,7 @@ Partial Class MathContest
         Me.GroupBox3.Controls.Add(Me.AddRadioButton)
         Me.GroupBox3.Location = New System.Drawing.Point(275, 112)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(144, 194)
+        Me.GroupBox3.Size = New System.Drawing.Size(144, 177)
         Me.GroupBox3.TabIndex = 6
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Math Problem Type"
@@ -171,7 +171,7 @@ Partial Class MathContest
         Me.MathProblemGroupBox2.Controls.Add(Me.FirstNumberTextBox)
         Me.MathProblemGroupBox2.Location = New System.Drawing.Point(11, 112)
         Me.MathProblemGroupBox2.Name = "MathProblemGroupBox2"
-        Me.MathProblemGroupBox2.Size = New System.Drawing.Size(257, 194)
+        Me.MathProblemGroupBox2.Size = New System.Drawing.Size(257, 177)
         Me.MathProblemGroupBox2.TabIndex = 5
         Me.MathProblemGroupBox2.TabStop = False
         Me.MathProblemGroupBox2.Text = "Current Math Problem"
@@ -179,7 +179,7 @@ Partial Class MathContest
         'AnswerLabel
         '
         Me.AnswerLabel.AutoSize = True
-        Me.AnswerLabel.Location = New System.Drawing.Point(26, 147)
+        Me.AnswerLabel.Location = New System.Drawing.Point(26, 129)
         Me.AnswerLabel.Name = "AnswerLabel"
         Me.AnswerLabel.Size = New System.Drawing.Size(82, 13)
         Me.AnswerLabel.TabIndex = 5
@@ -206,7 +206,7 @@ Partial Class MathContest
         'AnswerTextBox
         '
         Me.AnswerTextBox.Enabled = False
-        Me.AnswerTextBox.Location = New System.Drawing.Point(23, 163)
+        Me.AnswerTextBox.Location = New System.Drawing.Point(23, 145)
         Me.AnswerTextBox.Name = "AnswerTextBox"
         Me.AnswerTextBox.Size = New System.Drawing.Size(196, 20)
         Me.AnswerTextBox.TabIndex = 2
@@ -215,15 +215,19 @@ Partial Class MathContest
         '
         Me.SecondNumberTextBox.Location = New System.Drawing.Point(22, 82)
         Me.SecondNumberTextBox.Name = "SecondNumberTextBox"
+        Me.SecondNumberTextBox.ReadOnly = True
         Me.SecondNumberTextBox.Size = New System.Drawing.Size(195, 20)
         Me.SecondNumberTextBox.TabIndex = 1
+        Me.SecondNumberTextBox.TabStop = False
         '
         'FirstNumberTextBox
         '
         Me.FirstNumberTextBox.Location = New System.Drawing.Point(23, 37)
         Me.FirstNumberTextBox.Name = "FirstNumberTextBox"
+        Me.FirstNumberTextBox.ReadOnly = True
         Me.FirstNumberTextBox.Size = New System.Drawing.Size(195, 20)
         Me.FirstNumberTextBox.TabIndex = 0
+        Me.FirstNumberTextBox.TabStop = False
         '
         'StudentInformationGroupBox
         '
@@ -302,13 +306,13 @@ Partial Class MathContest
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(620, 319)
+        Me.ClientSize = New System.Drawing.Size(620, 299)
         Me.Controls.Add(Me.ButtonGroupBox)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.MathProblemGroupBox2)
         Me.Controls.Add(Me.StudentInformationGroupBox)
         Me.Name = "MathContest"
-        Me.Text = "Form1"
+        Me.Text = "Mathe Contest"
         Me.ButtonGroupBox.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
