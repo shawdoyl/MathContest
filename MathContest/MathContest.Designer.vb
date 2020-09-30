@@ -67,6 +67,7 @@ Partial Class MathContest
         '
         'ExitButton
         '
+        Me.ExitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.ExitButton.Location = New System.Drawing.Point(6, 207)
         Me.ExitButton.Name = "ExitButton"
         Me.ExitButton.Size = New System.Drawing.Size(167, 57)
@@ -304,8 +305,10 @@ Partial Class MathContest
         '
         'MathContest
         '
+        Me.AcceptButton = Me.SubmitButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.ExitButton
         Me.ClientSize = New System.Drawing.Size(620, 299)
         Me.Controls.Add(Me.ButtonGroupBox)
         Me.Controls.Add(Me.GroupBox3)

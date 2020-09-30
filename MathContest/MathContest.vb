@@ -15,9 +15,6 @@ Public Class MathContest
     Dim actualAnswer As Integer
     Dim studentName As String = ""
 
-    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
-        Me.Close()
-    End Sub
 
     Private Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
         Dim userMessage As String
@@ -53,21 +50,11 @@ Public Class MathContest
         FirstNumberTextBox.Text = firstNumber
         SecondNumberTextBox.Text = secondNumber
         AnswerTextBox.Text = ""
+        AnswerTextBox.Select()
         SummaryButton.Enabled = True
         numberOfProblems += 1
     End Sub
 
-    Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
-        numberOfProblems = 0
-        numberOfProblemsCorrect = 0
-        NameTextBox.Text = ""
-        GradeTextBox.Text = ""
-        AgeTextBox.Text = ""
-        AnswerTextBox.Text = ""
-        FirstNumberTextBox.Text = ""
-        SecondNumberTextBox.Text = ""
-        ResetAllControls()
-    End Sub
 
     Private Sub SummaryButton_Click(sender As Object, e As EventArgs) Handles SummaryButton.Click
         MsgBox("You got " & numberOfProblemsCorrect & " answers correct out of all possible " & numberOfProblems)
@@ -183,6 +170,21 @@ Public Class MathContest
         Else
             SubmitButton.Enabled = False
         End If
+    End Sub
+
+    Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
+        numberOfProblems = 0
+        numberOfProblemsCorrect = 0
+        NameTextBox.Text = ""
+        GradeTextBox.Text = ""
+        AgeTextBox.Text = ""
+        AnswerTextBox.Text = ""
+        FirstNumberTextBox.Text = ""
+        SecondNumberTextBox.Text = ""
+        ResetAllControls()
+    End Sub
+    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
+        Me.Close()
     End Sub
 
 End Class
