@@ -21,6 +21,9 @@ Public Class MathContest
 
     Private Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
         Dim userMessage As String
+        Dim firstName() As String
+
+        firstName = Split(studentName)
 
         If AddRadioButton.Checked = True Then
             actualAnswer = CInt(firstNumber) + CInt(secondNumber)
@@ -33,10 +36,12 @@ Public Class MathContest
         End If
 
         If CInt(AnswerTextBox.Text) = CInt(actualAnswer) Then
-            userMessage = "Good job, " & studentName & ", that is correct!"
+            My.Computer.Audio.Play(My.Resources.Resource1.applause2,
+            AudioPlayMode.Background)
+            userMessage = "Good job " & firstName(0) & ", that is correct!"
             numberOfProblemsCorrect += 1
         Else
-            userMessage = "Sorry, " & studentName & ", that is not correct. The correct " _
+            userMessage = "Sorry " & firstName(0) & ", that is not correct. The correct " _
                         & "answer was " & actualAnswer & "."
         End If
 
