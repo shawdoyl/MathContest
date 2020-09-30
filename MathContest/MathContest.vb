@@ -65,20 +65,11 @@ Public Class MathContest
     End Sub
 
     Sub ResetAllControls()
-        AddRadioButton.Enabled = False
-        SubtractRadioButton.Enabled = False
-        MultiplyRadioButton.Enabled = False
-        DivideRadioButton.Enabled = False
+        MathTypeGroupBox.Enabled = False
+        MathProblemGroupBox.Enabled = False
+        StudentInformationGroupBox.Enabled = True
         SubmitButton.Enabled = False
         SummaryButton.Enabled = False
-        FirstNumberTextBox.Enabled = False
-        SecondNumberTextBox.Enabled = False
-        AnswerTextBox.Enabled = False
-        AddRadioButton.Checked = True
-        NameTextBox.Enabled = True
-        AgeTextBox.Enabled = True
-        GradeTextBox.Enabled = True
-        ValidateButton.Enabled = True
     End Sub
 
     Private Sub ValidateClick(sender As Object, e As EventArgs) Handles ValidateButton.Click
@@ -128,17 +119,9 @@ Public Class MathContest
                 GradeTextBox.Select()
             End If
         Else
-            AddRadioButton.Enabled = True
-            SubtractRadioButton.Enabled = True
-            MultiplyRadioButton.Enabled = True
-            DivideRadioButton.Enabled = True
-            FirstNumberTextBox.Enabled = True
-            SecondNumberTextBox.Enabled = True
-            AnswerTextBox.Enabled = True
-            NameTextBox.Enabled = False
-            AgeTextBox.Enabled = False
-            GradeTextBox.Enabled = False
-            ValidateButton.Enabled = False
+            MathTypeGroupBox.Enabled = True
+            MathProblemGroupBox.Enabled = True
+            StudentInformationGroupBox.Enabled = False
             Randomize()
             firstNumber = CInt((12 * Rnd()) + 1)
             Randomize()

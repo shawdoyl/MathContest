@@ -27,12 +27,12 @@ Partial Class MathContest
         Me.SummaryButton = New System.Windows.Forms.Button()
         Me.ClearButton = New System.Windows.Forms.Button()
         Me.SubmitButton = New System.Windows.Forms.Button()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.MathTypeGroupBox = New System.Windows.Forms.GroupBox()
         Me.DivideRadioButton = New System.Windows.Forms.RadioButton()
         Me.MultiplyRadioButton = New System.Windows.Forms.RadioButton()
         Me.SubtractRadioButton = New System.Windows.Forms.RadioButton()
         Me.AddRadioButton = New System.Windows.Forms.RadioButton()
-        Me.MathProblemGroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.MathProblemGroupBox = New System.Windows.Forms.GroupBox()
         Me.AnswerLabel = New System.Windows.Forms.Label()
         Me.SecondNumberLabel = New System.Windows.Forms.Label()
         Me.FirstNumberLabel = New System.Windows.Forms.Label()
@@ -48,8 +48,8 @@ Partial Class MathContest
         Me.AgeTextBox = New System.Windows.Forms.TextBox()
         Me.NameTextBox = New System.Windows.Forms.TextBox()
         Me.ButtonGroupBox.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        Me.MathProblemGroupBox2.SuspendLayout()
+        Me.MathTypeGroupBox.SuspendLayout()
+        Me.MathProblemGroupBox.SuspendLayout()
         Me.StudentInformationGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -105,18 +105,18 @@ Partial Class MathContest
         Me.SubmitButton.Text = "Submit"
         Me.SubmitButton.UseVisualStyleBackColor = True
         '
-        'GroupBox3
+        'MathTypeGroupBox
         '
-        Me.GroupBox3.Controls.Add(Me.DivideRadioButton)
-        Me.GroupBox3.Controls.Add(Me.MultiplyRadioButton)
-        Me.GroupBox3.Controls.Add(Me.SubtractRadioButton)
-        Me.GroupBox3.Controls.Add(Me.AddRadioButton)
-        Me.GroupBox3.Location = New System.Drawing.Point(275, 112)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(144, 177)
-        Me.GroupBox3.TabIndex = 6
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Math Problem Type"
+        Me.MathTypeGroupBox.Controls.Add(Me.DivideRadioButton)
+        Me.MathTypeGroupBox.Controls.Add(Me.MultiplyRadioButton)
+        Me.MathTypeGroupBox.Controls.Add(Me.SubtractRadioButton)
+        Me.MathTypeGroupBox.Controls.Add(Me.AddRadioButton)
+        Me.MathTypeGroupBox.Location = New System.Drawing.Point(275, 112)
+        Me.MathTypeGroupBox.Name = "MathTypeGroupBox"
+        Me.MathTypeGroupBox.Size = New System.Drawing.Size(144, 177)
+        Me.MathTypeGroupBox.TabIndex = 6
+        Me.MathTypeGroupBox.TabStop = False
+        Me.MathTypeGroupBox.Text = "Math Problem Type"
         '
         'DivideRadioButton
         '
@@ -162,20 +162,20 @@ Partial Class MathContest
         Me.AddRadioButton.Text = "Add"
         Me.AddRadioButton.UseVisualStyleBackColor = True
         '
-        'MathProblemGroupBox2
+        'MathProblemGroupBox
         '
-        Me.MathProblemGroupBox2.Controls.Add(Me.AnswerLabel)
-        Me.MathProblemGroupBox2.Controls.Add(Me.SecondNumberLabel)
-        Me.MathProblemGroupBox2.Controls.Add(Me.FirstNumberLabel)
-        Me.MathProblemGroupBox2.Controls.Add(Me.AnswerTextBox)
-        Me.MathProblemGroupBox2.Controls.Add(Me.SecondNumberTextBox)
-        Me.MathProblemGroupBox2.Controls.Add(Me.FirstNumberTextBox)
-        Me.MathProblemGroupBox2.Location = New System.Drawing.Point(11, 112)
-        Me.MathProblemGroupBox2.Name = "MathProblemGroupBox2"
-        Me.MathProblemGroupBox2.Size = New System.Drawing.Size(257, 177)
-        Me.MathProblemGroupBox2.TabIndex = 5
-        Me.MathProblemGroupBox2.TabStop = False
-        Me.MathProblemGroupBox2.Text = "Current Math Problem"
+        Me.MathProblemGroupBox.Controls.Add(Me.AnswerLabel)
+        Me.MathProblemGroupBox.Controls.Add(Me.SecondNumberLabel)
+        Me.MathProblemGroupBox.Controls.Add(Me.FirstNumberLabel)
+        Me.MathProblemGroupBox.Controls.Add(Me.AnswerTextBox)
+        Me.MathProblemGroupBox.Controls.Add(Me.SecondNumberTextBox)
+        Me.MathProblemGroupBox.Controls.Add(Me.FirstNumberTextBox)
+        Me.MathProblemGroupBox.Location = New System.Drawing.Point(11, 112)
+        Me.MathProblemGroupBox.Name = "MathProblemGroupBox"
+        Me.MathProblemGroupBox.Size = New System.Drawing.Size(257, 177)
+        Me.MathProblemGroupBox.TabIndex = 5
+        Me.MathProblemGroupBox.TabStop = False
+        Me.MathProblemGroupBox.Text = "Current Math Problem"
         '
         'AnswerLabel
         '
@@ -311,16 +311,16 @@ Partial Class MathContest
         Me.CancelButton = Me.ExitButton
         Me.ClientSize = New System.Drawing.Size(620, 299)
         Me.Controls.Add(Me.ButtonGroupBox)
-        Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.MathProblemGroupBox2)
+        Me.Controls.Add(Me.MathTypeGroupBox)
+        Me.Controls.Add(Me.MathProblemGroupBox)
         Me.Controls.Add(Me.StudentInformationGroupBox)
         Me.Name = "MathContest"
         Me.Text = "Mathe Contest"
         Me.ButtonGroupBox.ResumeLayout(False)
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
-        Me.MathProblemGroupBox2.ResumeLayout(False)
-        Me.MathProblemGroupBox2.PerformLayout()
+        Me.MathTypeGroupBox.ResumeLayout(False)
+        Me.MathTypeGroupBox.PerformLayout()
+        Me.MathProblemGroupBox.ResumeLayout(False)
+        Me.MathProblemGroupBox.PerformLayout()
         Me.StudentInformationGroupBox.ResumeLayout(False)
         Me.StudentInformationGroupBox.PerformLayout()
         Me.ResumeLayout(False)
@@ -332,12 +332,12 @@ Partial Class MathContest
     Friend WithEvents SummaryButton As Button
     Friend WithEvents ClearButton As Button
     Friend WithEvents SubmitButton As Button
-    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents MathTypeGroupBox As GroupBox
     Friend WithEvents DivideRadioButton As RadioButton
     Friend WithEvents MultiplyRadioButton As RadioButton
     Friend WithEvents SubtractRadioButton As RadioButton
     Friend WithEvents AddRadioButton As RadioButton
-    Friend WithEvents MathProblemGroupBox2 As GroupBox
+    Friend WithEvents MathProblemGroupBox As GroupBox
     Friend WithEvents AnswerLabel As Label
     Friend WithEvents SecondNumberLabel As Label
     Friend WithEvents FirstNumberLabel As Label
