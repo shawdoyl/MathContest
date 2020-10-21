@@ -4,6 +4,9 @@
 'Math Contest
 'https://github.com/shawdoyl/MathContest
 
+Option Explicit On
+Option Strict On
+
 Public Class MathContest
     Dim numberOfProblems As Integer = 0
     Dim numberOfProblemsCorrect As Integer = 0
@@ -15,7 +18,6 @@ Public Class MathContest
     Dim actualAnswer As Integer
     Dim studentName As String = ""
 
-
     Private Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
         Dim userMessage As String
         Dim firstName() As String
@@ -23,13 +25,13 @@ Public Class MathContest
         firstName = Split(studentName)
 
         If AddRadioButton.Checked = True Then
-            actualAnswer = CInt(firstNumber) + CInt(secondNumber)
+            actualAnswer = CInt(firstNumber + secondNumber)
         ElseIf SubtractRadioButton.Checked = True Then
-            actualAnswer = CInt(firstNumber) - CInt(secondNumber)
+            actualAnswer = CInt(firstNumber - secondNumber)
         ElseIf DivideRadioButton.Checked = True Then
-            actualAnswer = CInt(firstNumber) / CInt(secondNumber)
+            actualAnswer = CInt(firstNumber / secondNumber)
         ElseIf MultiplyRadioButton.Checked = True Then
-            actualAnswer = CInt(firstNumber) * CInt(secondNumber)
+            actualAnswer = CInt(firstNumber * secondNumber)
         End If
 
         If CInt(AnswerTextBox.Text) = CInt(actualAnswer) Then
@@ -47,23 +49,19 @@ Public Class MathContest
         firstNumber = CInt((12 * Rnd()) + 1)
         Randomize()
         secondNumber = CInt((12 * Rnd()) + 1)
-        FirstNumberTextBox.Text = firstNumber
-        SecondNumberTextBox.Text = secondNumber
+        FirstNumberTextBox.Text = CStr(firstNumber)
+        SecondNumberTextBox.Text = CStr(secondNumber)
         AnswerTextBox.Text = ""
         AnswerTextBox.Select()
         SummaryButton.Enabled = True
         numberOfProblems += 1
     End Sub
-
-
     Private Sub SummaryButton_Click(sender As Object, e As EventArgs) Handles SummaryButton.Click
         MsgBox("You got " & numberOfProblemsCorrect & " answers correct out of all possible " & numberOfProblems)
     End Sub
-
     Private Sub MathContest_Load(sender As Object, e As EventArgs) Handles Me.Load
         ResetAllControls()
     End Sub
-
     Sub ResetAllControls()
         MathTypeGroupBox.Enabled = False
         MathProblemGroupBox.Enabled = False
@@ -71,7 +69,6 @@ Public Class MathContest
         SubmitButton.Enabled = False
         SummaryButton.Enabled = False
     End Sub
-
     Private Sub ValidateClick(sender As Object, e As EventArgs) Handles ValidateButton.Click
         Dim userMessage As String = ""
         Dim AgeBad As Boolean = False
@@ -82,7 +79,6 @@ Public Class MathContest
         Else
             studentName = NameTextBox.Text
         End If
-
         Try
             studentAge = CInt(AgeTextBox.Text)
             If studentAge > 6 And studentAge < 12 Then
@@ -126,11 +122,10 @@ Public Class MathContest
             firstNumber = CInt((12 * Rnd()) + 1)
             Randomize()
             secondNumber = CInt((12 * Rnd()) + 1)
-            FirstNumberTextBox.Text = firstNumber
-            SecondNumberTextBox.Text = secondNumber
+            FirstNumberTextBox.Text = CStr(firstNumber)
+            SecondNumberTextBox.Text = CStr(secondNumber)
         End If
     End Sub
-
     Private Sub AnyNumberTextBox_TextChanged(sender As Object, e As EventArgs) Handles FirstNumberTextBox.TextChanged, SecondNumberTextBox.TextChanged, AnswerTextBox.TextChanged
         Dim userMessage As String = ""
         Dim AnswerGood As Boolean
@@ -143,7 +138,6 @@ Public Class MathContest
                 MsgBox("Please enter a valid answer")
             End Try
         End If
-
         If userMessage <> "" Then
             MsgBox(userMessage)
         Else
@@ -154,7 +148,6 @@ Public Class MathContest
             SubmitButton.Enabled = False
         End If
     End Sub
-
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
         numberOfProblems = 0
         numberOfProblemsCorrect = 0
@@ -169,5 +162,4 @@ Public Class MathContest
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
     End Sub
-
 End Class
