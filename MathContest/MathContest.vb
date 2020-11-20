@@ -35,8 +35,6 @@ Public Class MathContest
         End If
 
         If CInt(AnswerTextBox.Text) = CInt(actualAnswer) Then
-            My.Computer.Audio.Play(My.Resources.Resource1.applause2,
-            AudioPlayMode.Background)
             userMessage = "Good job " & firstName(0) & ", that is correct!"
             numberOfProblemsCorrect += 1
         Else
