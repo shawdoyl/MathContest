@@ -68,6 +68,7 @@ Public Class MathContest
         StudentInformationGroupBox.Enabled = True
         SubmitButton.Enabled = False
         SummaryButton.Enabled = False
+        AnswerTextBox.Enabled = True
     End Sub
     Private Sub ValidateClick(sender As Object, e As EventArgs) Handles ValidateButton.Click
         Dim userMessage As String = ""

@@ -206,7 +206,6 @@ Partial Class MathContest
         '
         'AnswerTextBox
         '
-        Me.AnswerTextBox.Enabled = False
         Me.AnswerTextBox.Location = New System.Drawing.Point(23, 145)
         Me.AnswerTextBox.Name = "AnswerTextBox"
         Me.AnswerTextBox.Size = New System.Drawing.Size(196, 20)
@@ -214,6 +213,7 @@ Partial Class MathContest
         '
         'SecondNumberTextBox
         '
+        Me.SecondNumberTextBox.Enabled = False
         Me.SecondNumberTextBox.Location = New System.Drawing.Point(22, 82)
         Me.SecondNumberTextBox.Name = "SecondNumberTextBox"
         Me.SecondNumberTextBox.ReadOnly = True
@@ -223,6 +223,7 @@ Partial Class MathContest
         '
         'FirstNumberTextBox
         '
+        Me.FirstNumberTextBox.Enabled = False
         Me.FirstNumberTextBox.Location = New System.Drawing.Point(23, 37)
         Me.FirstNumberTextBox.Name = "FirstNumberTextBox"
         Me.FirstNumberTextBox.ReadOnly = True
